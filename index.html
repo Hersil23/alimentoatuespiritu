@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Alimento a tu Espiritu — Ministerio Cristiano | Devocionales y Ensenanzas Biblicas</title>
+  <meta name="description" content="Ministerio cristiano Alimento a tu Espiritu. Devocionales cinematograficos, ensenanzas biblicas y el libro Tres Caminos Un Solo Dios.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alimentoatuespiritu.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alimento a tu Espiritu — Ministerio Cristiano">
+  <meta property="og:description" content="Devocionales cinematograficos, ensenanzas biblicas y el libro Tres Caminos Un Solo Dios.">
+  <meta property="og:image" content="https://alimentoatuespiritu.org/assets/img/logo.png">
+  <meta property="og:url" content="https://alimentoatuespiritu.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_US">
+  <meta property="og:site_name" content="Alimento a tu Espiritu">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alimento a tu Espiritu — Ministerio Cristiano">
+  <meta name="twitter:description" content="Devocionales cinematograficos, ensenanzas biblicas y el libro Tres Caminos Un Solo Dios.">
+  <meta name="twitter:image" content="https://alimentoatuespiritu.org/assets/img/logo.png">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ReligiousOrganization",
+    "name": "Alimento a tu Espiritu",
+    "description": "Ministerio cristiano dedicado a nutrir tu espiritu con devocionales y ensenanzas biblicas.",
+    "url": "https://alimentoatuespiritu.org",
+    "email": "info@alimentoatuespiritu.org",
+    "sameAs": [
+      "https://instagram.com/alimentoatuespiritu"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Marcellus&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg:      '#0B0F1A',
+            surface: '#141B2D',
+            navy:    '#1E3A5F',
+            gold:    '#B8932A',
+            'gold-lt': '#D4A843',
+            text:    '#EDE8DC',
+            muted:   '#788299',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            nav:     ['"Marcellus"', 'serif'],
+            body:    ['"Lora"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-bg text-text font-body antialiased">
+
+  <!-- ── SECCION: NAVBAR ── -->
+  <nav id="nav" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+
+        <!-- Logo -->
+        <a href="#hero" class="flex-shrink-0">
+          <img src="assets/img/logo.png" alt="Logo Alimento a tu Espiritu" class="h-14 md:h-20">
+        </a>
+
+        <!-- Nav Links (desktop) -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#hero" class="font-nav text-sm tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.inicio">Inicio</a>
+          <a href="#mision" class="font-nav text-sm tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.ministerio">Ministerio</a>
+          <a href="#tres-caminos" class="font-nav text-sm tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.tresCaminos">Tres Caminos</a>
+          <a href="#devocionales" class="font-nav text-sm tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.devocionales">Devocionales</a>
+          <a href="#contacto" class="font-nav text-sm tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.contacto">Contacto</a>
+        </div>
+
+        <!-- Language Toggle + Hamburger -->
+        <div class="flex items-center space-x-4">
+          <button id="lang-toggle" onclick="setLanguage(currentLang === 'es' ? 'en' : 'es')" class="font-nav text-xs tracking-widest border border-gold text-gold px-3 py-1 rounded hover:bg-gold hover:text-bg transition-colors">
+            ES | EN
+          </button>
+          <!-- Hamburger (mobile) -->
+          <button id="hamburger" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5" aria-label="Menu">
+            <span class="block w-6 h-0.5 bg-text transition-transform" id="ham-top"></span>
+            <span class="block w-6 h-0.5 bg-text transition-opacity" id="ham-mid"></span>
+            <span class="block w-6 h-0.5 bg-text transition-transform" id="ham-bot"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-bg z-40 flex-col items-center justify-center hidden">
+      <div class="flex flex-col items-center space-y-8">
+        <a href="#hero" class="font-nav text-xl tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.inicio" onclick="closeMobileMenu()">Inicio</a>
+        <a href="#mision" class="font-nav text-xl tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.ministerio" onclick="closeMobileMenu()">Ministerio</a>
+        <a href="#tres-caminos" class="font-nav text-xl tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.tresCaminos" onclick="closeMobileMenu()">Tres Caminos</a>
+        <a href="#devocionales" class="font-nav text-xl tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.devocionales" onclick="closeMobileMenu()">Devocionales</a>
+        <a href="#contacto" class="font-nav text-xl tracking-widest text-text hover:text-gold-lt transition-colors" data-i18n="nav.contacto" onclick="closeMobileMenu()">Contacto</a>
+        <button onclick="setLanguage(currentLang === 'es' ? 'en' : 'es'); closeMobileMenu();" class="font-nav text-sm tracking-widest border border-gold text-gold px-4 py-2 rounded hover:bg-gold hover:text-bg transition-colors">
+          ES | EN
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+  <!-- ── SECCION: HERO ── -->
+  <section id="hero" aria-label="Hero" class="relative w-full h-screen overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline poster="assets/img/hero-poster.jpg" class="absolute inset-0 w-full h-full object-cover">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-[rgba(11,15,26,0.72)]"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <img src="assets/img/logo.png" alt="Logo Alimento a tu Espiritu" id="hero-logo" class="w-28 md:w-40 mb-6 opacity-0">
+      <h1 id="hero-titulo" class="font-display text-4xl sm:text-5xl md:text-7xl font-semibold text-gold-lt mb-4 opacity-0" data-i18n="hero.titulo">Alimento a tu Espiritu</h1>
+      <p id="hero-subtitulo" class="font-body text-lg md:text-xl text-text max-w-2xl mb-8 opacity-0" data-i18n="hero.subtitulo">Devocionales y ensenanzas para nutrir tu fe</p>
+      <div id="hero-ctas" class="flex flex-col sm:flex-row gap-4 mb-12 opacity-0">
+        <a href="#mision" class="font-nav text-sm tracking-wider bg-gold text-bg px-8 py-3 rounded hover:bg-gold-lt transition-colors" data-i18n="hero.cta1">Conoce el Ministerio</a>
+        <a href="#devocionales" class="font-nav text-sm tracking-wider border border-gold text-gold px-8 py-3 rounded hover:bg-gold hover:text-bg transition-colors" data-i18n="hero.cta2">Ver Devocionales</a>
+      </div>
+      <!-- Scroll Arrow -->
+      <div id="scroll-arrow" class="opacity-0">
+        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCION: MISION ── -->
+  <section id="mision" aria-label="Mision" class="bg-surface py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+        <!-- Texto (60%) -->
+        <div class="md:col-span-3">
+          <h2 class="font-display text-3xl md:text-5xl font-semibold text-gold-lt mb-6" data-i18n="mision.titulo">Nuestra Mision</h2>
+          <p class="font-body text-lg text-text leading-relaxed mb-8" data-i18n="mision.texto">Texto de la mision del ministerio. Pendiente del cliente.</p>
+          <!-- Cita Biblica -->
+          <blockquote class="border-l-4 border-gold pl-6 py-2">
+            <p class="font-display italic text-xl text-text mb-2" data-i18n="mision.cita">"Porque yo se los pensamientos que tengo acerca de vosotros, dice Jehova, pensamientos de paz, y no de mal, para daros el fin que esperais."</p>
+            <cite class="font-body text-muted text-sm" data-i18n="mision.citaRef">— Jeremias 29:11</cite>
+          </blockquote>
+        </div>
+        <!-- Imagen (40%) -->
+        <div class="md:col-span-2">
+          <img src="assets/img/pastor.jpg" alt="Ministerio Alimento a tu Espiritu" class="w-full rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCION: TRES CAMINOS ── -->
+  <section id="tres-caminos" aria-label="Tres Caminos" class="bg-bg py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-5xl font-semibold text-gold-lt mb-3" data-i18n="tresCaminos.titulo">Tres Caminos Un Solo Dios</h2>
+        <p class="font-body text-lg text-muted mb-2" data-i18n="tresCaminos.autor">Alimento a tu Espiritu</p>
+        <span class="inline-block font-nav text-xs tracking-widest bg-gold text-bg px-4 py-1 rounded-full" data-i18n="tresCaminos.badge">Disponible ahora</span>
+      </div>
+
+      <!-- 3 Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Card 1: Los Predestinados -->
+        <div class="bg-surface rounded-lg border-t-[3px] border-gold p-8 tres-caminos-card">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-text mb-3" data-i18n="tresCaminos.card1.titulo">Los Predestinados</h3>
+          <p class="font-body text-muted mb-6" data-i18n="tresCaminos.card1.desc">Aquellos elegidos por Dios desde antes de la fundacion del mundo.</p>
+          <a href="#devocionales" class="font-nav text-sm tracking-wider text-gold hover:text-gold-lt transition-colors" data-i18n="tresCaminos.card1.cta">Ver Devocional &rarr;</a>
+        </div>
+
+        <!-- Card 2: Libre Albedrio -->
+        <div class="bg-surface rounded-lg border-t-[3px] border-gold p-8 tres-caminos-card">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-text mb-3" data-i18n="tresCaminos.card2.titulo">Libre Albedrio</h3>
+          <p class="font-body text-muted mb-6" data-i18n="tresCaminos.card2.desc">La libertad que Dios otorga para elegir nuestro camino.</p>
+          <a href="#devocionales" class="font-nav text-sm tracking-wider text-gold hover:text-gold-lt transition-colors" data-i18n="tresCaminos.card2.cta">Ver Devocional &rarr;</a>
+        </div>
+
+        <!-- Card 3: Hijos de Desobediencia -->
+        <div class="bg-surface rounded-lg border-t-[3px] border-gold p-8 tres-caminos-card">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-text mb-3" data-i18n="tresCaminos.card3.titulo">Hijos de Desobediencia</h3>
+          <p class="font-body text-muted mb-6" data-i18n="tresCaminos.card3.desc">El camino de regreso a Dios desde la desobediencia.</p>
+          <a href="#devocionales" class="font-nav text-sm tracking-wider text-gold hover:text-gold-lt transition-colors" data-i18n="tresCaminos.card3.cta">Ver Devocional &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Video Featured -->
+      <div class="max-w-3xl mx-auto">
+        <div class="aspect-video bg-surface rounded-lg overflow-hidden border border-gold/20 flex items-center justify-center">
+          <p class="font-body text-muted" data-i18n="tresCaminos.videoPlaceholder">Video devocional destacado proximamente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCION: DEVOCIONALES ── -->
+  <section id="devocionales" aria-label="Devocionales" class="bg-surface py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold text-gold-lt text-center mb-6" data-i18n="devocionales.titulo">Devocionales</h2>
+      <p class="font-body text-lg text-muted text-center max-w-2xl mx-auto mb-12" data-i18n="devocionales.subtitulo">Videos cinematograficos para nutrir tu espiritu</p>
+
+      <!-- Filtros -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="filter-btn font-nav text-xs tracking-wider px-5 py-2 rounded-full border border-gold text-gold bg-transparent hover:bg-gold hover:text-bg transition-colors active" data-filter="todos" data-i18n="devocionales.filtroTodos">Todos</button>
+        <button class="filter-btn font-nav text-xs tracking-wider px-5 py-2 rounded-full border border-gold/40 text-muted hover:bg-gold hover:text-bg transition-colors" data-filter="camino1" data-i18n="devocionales.filtro1">Camino 1</button>
+        <button class="filter-btn font-nav text-xs tracking-wider px-5 py-2 rounded-full border border-gold/40 text-muted hover:bg-gold hover:text-bg transition-colors" data-filter="camino2" data-i18n="devocionales.filtro2">Camino 2</button>
+        <button class="filter-btn font-nav text-xs tracking-wider px-5 py-2 rounded-full border border-gold/40 text-muted hover:bg-gold hover:text-bg transition-colors" data-filter="camino3" data-i18n="devocionales.filtro3">Camino 3</button>
+      </div>
+
+      <!-- Grid de Videos -->
+      <div id="devocionales-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card Devocional 1 -->
+        <div class="devocional-card bg-bg rounded-lg overflow-hidden border border-gold/10 hover:border-gold/30 transition-colors" data-camino="camino1">
+          <div class="aspect-video bg-navy/20 flex items-center justify-center">
+            <img src="assets/img/devocionales/thumb-01.jpg" alt="Devocional Episodio 1" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <span class="font-nav text-xs text-muted tracking-wider" data-i18n="devocionales.ep">Episodio 1</span>
+            <h3 class="font-display text-xl font-semibold text-text mt-1 mb-3" data-i18n="devocionales.v1.titulo">Titulo Devocional 1</h3>
+            <a href="#" class="font-nav text-sm tracking-wider text-gold hover:text-gold-lt transition-colors" data-i18n="devocionales.ver">Ver &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Card Devocional 2 -->
+        <div class="devocional-card bg-bg rounded-lg overflow-hidden border border-gold/10 hover:border-gold/30 transition-colors" data-camino="camino2">
+          <div class="aspect-video bg-navy/20 flex items-center justify-center">
+            <img src="assets/img/devocionales/thumb-02.jpg" alt="Devocional Episodio 2" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <span class="font-nav text-xs text-muted tracking-wider" data-i18n="devocionales.ep2">Episodio 2</span>
+            <h3 class="font-display text-xl font-semibold text-text mt-1 mb-3" data-i18n="devocionales.v2.titulo">Titulo Devocional 2</h3>
+            <a href="#" class="font-nav text-sm tracking-wider text-gold hover:text-gold-lt transition-colors" data-i18n="devocionales.ver">Ver &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Card Devocional 3 -->
+        <div class="devocional-card bg-bg rounded-lg overflow-hidden border border-gold/10 hover:border-gold/30 transition-colors" data-camino="camino3">
+          <div class="aspect-video bg-navy/20 flex items-center justify-center">
+            <img src="assets/img/devocionales/thumb-03.jpg" alt="Devocional Episodio 3" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <span class="font-nav text-xs text-muted tracking-wider" data-i18n="devocionales.ep3">Episodio 3</span>
+            <h3 class="font-display text-xl font-semibold text-text mt-1 mb-3" data-i18n="devocionales.v3.titulo">Titulo Devocional 3</h3>
+            <a href="#" class="font-nav text-sm tracking-wider text-gold hover:text-gold-lt transition-colors" data-i18n="devocionales.ver">Ver &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCION: REDES ── -->
+  <section id="redes" aria-label="Redes Sociales" class="bg-surface py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-surface via-bg/50 to-surface"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Instagram -->
+        <div class="text-center p-8 bg-bg/50 rounded-lg border border-gold/10">
+          <svg class="w-12 h-12 text-gold mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <h3 class="font-display text-2xl font-semibold text-text mb-2" data-i18n="redes.igTitulo">Siguenos en Instagram</h3>
+          <p class="font-body text-muted mb-6">@alimentoatuespiritu</p>
+          <a href="https://instagram.com/alimentoatuespiritu" target="_blank" rel="noopener noreferrer" class="inline-block font-nav text-sm tracking-wider bg-gold text-bg px-8 py-3 rounded hover:bg-gold-lt transition-colors" data-i18n="redes.igCta">Seguirnos</a>
+        </div>
+        <!-- YouTube -->
+        <div class="text-center p-8 bg-bg/50 rounded-lg border border-gold/10">
+          <svg class="w-12 h-12 text-gold mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <h3 class="font-display text-2xl font-semibold text-text mb-2" data-i18n="redes.ytTitulo">YouTube</h3>
+          <p class="font-body text-muted mb-6" data-i18n="redes.ytDesc">Canal proximamente</p>
+          <span class="inline-block font-nav text-sm tracking-wider border border-gold/30 text-muted px-8 py-3 rounded cursor-default" data-i18n="redes.ytCta">Proximamente</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECCION: CONTACTO ── -->
+  <section id="contacto" aria-label="Contacto" class="bg-bg py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold text-gold-lt text-center mb-4" data-i18n="contacto.titulo">Envianos tu peticion de oracion</h2>
+      <p class="font-body text-lg text-muted text-center mb-12" data-i18n="contacto.subtitulo">Estamos aqui para orar contigo</p>
+
+      <!-- Formulario -->
+      <form action="https://formsubmit.co/info@alimentoatuespiritu.org" method="POST" class="space-y-6">
+        <!-- FormSubmit config -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nueva peticion de oracion — Alimento a tu Espiritu">
+        <input type="hidden" name="_next" value="https://alimentoatuespiritu.org/#contacto">
+
+        <div>
+          <label for="nombre" class="block font-nav text-xs tracking-wider text-muted mb-2" data-i18n="contacto.nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required class="w-full bg-surface border border-gold/20 rounded px-4 py-3 text-text font-body focus:border-gold focus:outline-none transition-colors min-h-[44px]">
+        </div>
+        <div>
+          <label for="email" class="block font-nav text-xs tracking-wider text-muted mb-2" data-i18n="contacto.email">Correo electronico</label>
+          <input type="email" id="email" name="email" required class="w-full bg-surface border border-gold/20 rounded px-4 py-3 text-text font-body focus:border-gold focus:outline-none transition-colors min-h-[44px]">
+        </div>
+        <div>
+          <label for="mensaje" class="block font-nav text-xs tracking-wider text-muted mb-2" data-i18n="contacto.mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required class="w-full bg-surface border border-gold/20 rounded px-4 py-3 text-text font-body focus:border-gold focus:outline-none transition-colors min-h-[44px] resize-y"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="font-nav text-sm tracking-wider bg-gold text-bg px-10 py-3 rounded hover:bg-gold-lt transition-colors min-h-[44px]" data-i18n="contacto.enviar">Enviar</button>
+        </div>
+      </form>
+
+      <!-- WhatsApp CTA -->
+      <div class="text-center mt-10">
+        <a href="https://wa.me/?text=Hola%2C%20me%20gustaria%20comunicarme%20con%20el%20ministerio%20Alimento%20a%20tu%20Espiritu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-nav text-sm tracking-wider border border-gold/40 text-gold px-6 py-3 rounded hover:bg-gold hover:text-bg transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="contacto.whatsapp">Escribenos por WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ── SECCION: FOOTER ── -->
+  <footer id="footer" class="bg-surface border-t border-gold/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Col 1: Logo + Descripcion -->
+        <div>
+          <img src="assets/img/logo.png" alt="Logo Alimento a tu Espiritu" class="h-20 md:h-28 mb-4">
+          <p class="font-body text-muted text-sm" data-i18n="footer.desc">Ministerio cristiano dedicado a nutrir tu espiritu con la palabra de Dios.</p>
+        </div>
+        <!-- Col 2: Links -->
+        <div>
+          <h4 class="font-nav text-sm tracking-widest text-gold mb-4" data-i18n="footer.navTitulo">Navegacion</h4>
+          <ul class="space-y-2">
+            <li><a href="#hero" class="font-body text-muted text-sm hover:text-gold-lt transition-colors" data-i18n="nav.inicio">Inicio</a></li>
+            <li><a href="#mision" class="font-body text-muted text-sm hover:text-gold-lt transition-colors" data-i18n="nav.ministerio">Ministerio</a></li>
+            <li><a href="#tres-caminos" class="font-body text-muted text-sm hover:text-gold-lt transition-colors" data-i18n="nav.tresCaminos">Tres Caminos</a></li>
+            <li><a href="#devocionales" class="font-body text-muted text-sm hover:text-gold-lt transition-colors" data-i18n="nav.devocionales">Devocionales</a></li>
+            <li><a href="#contacto" class="font-body text-muted text-sm hover:text-gold-lt transition-colors" data-i18n="nav.contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Col 3: Redes + Idioma -->
+        <div>
+          <h4 class="font-nav text-sm tracking-widest text-gold mb-4" data-i18n="footer.redesTitulo">Redes Sociales</h4>
+          <div class="flex items-center gap-4 mb-6">
+            <a href="https://instagram.com/alimentoatuespiritu" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-muted hover:text-gold transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-muted hover:text-gold transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-muted hover:text-gold transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://wa.me/?text=Hola%2C%20me%20gustaria%20comunicarme%20con%20el%20ministerio%20Alimento%20a%20tu%20Espiritu" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-muted hover:text-gold transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+          <!-- Email -->
+          <a href="mailto:info@alimentoatuespiritu.org" class="block font-body text-muted text-sm hover:text-gold-lt transition-colors mb-4">info@alimentoatuespiritu.org</a>
+          <button onclick="setLanguage(currentLang === 'es' ? 'en' : 'es')" class="font-nav text-xs tracking-widest border border-gold text-gold px-3 py-1 rounded hover:bg-gold hover:text-bg transition-colors">
+            ES | EN
+          </button>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="border-t border-gold/10 mt-10 pt-6 text-center">
+        <p class="font-body text-muted text-sm">&copy; 2026 Alimento a tu Espiritu · <span data-i18n="footer.creado">Creado por</span> <a href="https://instagram.com/herasi.dev" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold-lt transition-colors">@herasi.dev</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

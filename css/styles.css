@@ -1,0 +1,131 @@
+/* ── VARIABLES CSS ── */
+:root {
+  --color-bg:       #0B0F1A;
+  --color-surface:  #141B2D;
+  --color-navy:     #1E3A5F;
+  --color-gold:     #B8932A;
+  --color-gold-lt:  #D4A843;
+  --color-text:     #EDE8DC;
+  --color-muted:    #788299;
+  --color-overlay:  rgba(11, 15, 26, 0.72);
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-lt);
+}
+
+/* ── SELECTION ── */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+}
+
+/* ── NAVBAR STATES ── */
+.nav-scrolled {
+  background-color: rgba(11, 15, 26, 0.5) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── FILTER BUTTONS ACTIVE STATE ── */
+.filter-btn.active {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+  border-color: var(--color-gold);
+}
+
+/* ── TRES CAMINOS CARD HOVER (desktop only) ── */
+@media (hover: hover) {
+  .tres-caminos-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tres-caminos-card:hover {
+    box-shadow: 0 8px 30px rgba(184, 147, 42, 0.15);
+  }
+}
+
+/* ── DEVOCIONAL CARD HOVER (desktop only) ── */
+@media (hover: hover) {
+  .devocional-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .devocional-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(184, 147, 42, 0.12);
+  }
+}
+
+/* ── LANGUAGE TRANSITION ── */
+[data-i18n] {
+  transition: opacity 0.2s ease;
+}
+
+/* ── FORM FOCUS ── */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-gold) !important;
+}
+
+/* ── PERSPECTIVE FOR 3D TILT ── */
+.tres-caminos-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+/* ── HERO VIDEO FALLBACK ── */
+#hero video {
+  background-color: var(--color-bg);
+}
+
+/* ── MOBILE MENU ── */
+#mobile-menu {
+  will-change: opacity;
+}
+
+/* ── IMAGE PLACEHOLDERS (exclude logos) ── */
+img:not([alt*="Logo"]) {
+  background-color: var(--color-surface);
+}
+
+/* ── TOUCH TARGET MINIMUM ── */
+@media (pointer: coarse) {
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
