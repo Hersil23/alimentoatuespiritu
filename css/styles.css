@@ -123,9 +123,38 @@ img:not([alt*="Logo"]) {
 
 /* ── TOUCH TARGET MINIMUM ── */
 @media (pointer: coarse) {
-  a, button {
+  .font-nav,
+  .filter-btn,
+  form button,
+  form input,
+  form textarea {
     min-height: 44px;
-    display: inline-flex;
-    align-items: center;
   }
+}
+
+/* ── RESPONSIVE FIXES ── */
+
+/* 320px small phones */
+@media (max-width: 374px) {
+  #hero-titulo {
+    font-size: 1.75rem;
+  }
+  #hero-subtitulo {
+    font-size: 0.95rem;
+  }
+  #hero-ctas a {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 0.75rem;
+  }
+  .filter-btn {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.65rem;
+  }
+}
+
+/* Prevent horizontal overflow */
+section {
+  overflow-x: hidden;
 }
