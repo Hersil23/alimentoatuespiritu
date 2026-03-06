@@ -10,7 +10,7 @@ const i18n = {
     },
     hero: {
       titulo: 'Alimento a tu Espiritu',
-      subtitulo: 'Devocionales y enseñanzas para nutrir tu fe',
+      subtitulo: 'El alimento que da vida',
       cta1: 'Conoce el Ministerio',
       cta2: 'Ver Devocionales'
     },
@@ -89,7 +89,7 @@ const i18n = {
     },
     hero: {
       titulo: 'Food for your Spirit',
-      subtitulo: 'Devotionals and teachings to nurture your faith',
+      subtitulo: 'The food that gives life',
       cta1: 'Know the Ministry',
       cta2: 'See Devotionals'
     },
